@@ -51,6 +51,9 @@ files_processed = 0
 
 for path in base_path.rglob("*.*"):
     if path.suffix in ['.java', '.py', '.cpp']:
+        # Skip files in .github folder
+        if '.github' in path.parts:
+            continue
         parts = path.parts
         if len(parts) >= 2:
             category = parts[-2]
