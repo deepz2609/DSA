@@ -25,9 +25,9 @@ def create_notion_page(name, category, solution_link):
         "parent": {"database_id": DATABASE_ID},
         "properties": {
             "Name": {"title": [{"text": {"content": name}}]},
-            "Status": {"status": {"name": "Done"}},  # Fixed: using status property type
+            "Status": {"status": {"name": "Done"}},  # Using status property type
             "Category": {"select": {"name": category}},
-            "Solution": {"rich_text": [{"text": {"content": solution_link}}]},  # Fixed: using rich_text property type
+            "Solution": {"url": solution_link},  # Fixed: using url property type as expected by database
         }
     }
     
